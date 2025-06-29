@@ -1,0 +1,17 @@
+{
+    "theme": "DarkModern",
+    "index": "#",
+    "index_name": "",
+    "theme_descr": "Thème sombre moderne et esthétique pour le panel administrateur de SiCSy.",
+    "base": "admin-dark-modern.css",
+    "dash.php": "admin-dark-modern.css",
+    "add-admin.php": "admin-dark-modern.css",
+    "delete-user.php": "admin-dark-modern.css",
+    "gestion-admin.php": "admin-dark-modern.css",
+    "logs.php": "admin-dark-modern.css",
+    "modules.php": "admin-dark-modern.css",
+    "register.php": "admin-dark-modern.css",
+    "theme.php": "admin-dark-modern.css",
+    "theme-admin.php": "admin-dark-modern.css",
+    "users.php": "admin-dark-modern.css"
+} 

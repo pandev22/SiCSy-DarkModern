@@ -1,0 +1,628 @@
+/* ===== THÈME ADMIN DARK MODERN ===== */
+/* Fichier CSS unifié pour toutes les pages d'administration */
+
+:root {
+    --font-color: #e8e8e8;
+    --back-color: #0a0a0a;
+    --surface-color: #1a1a1a;
+    --surface-color-hover: #2a2a2a;
+    --accent-color: #6366f1;
+    --accent-hover: #4f46e5;
+    --success-color: #10b981;
+    --success-hover: #059669;
+    --warning-color: #f59e0b;
+    --warning-hover: #d97706;
+    --danger-color: #ef4444;
+    --danger-hover: #dc2626;
+    --text-muted: #9ca3af;
+    --border-color: #374151;
+    --border-light: #4b5563;
+
+    --glass-bg: rgba(26, 26, 26, 0.8);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+    --header-bg: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    --header-border: rgba(99, 102, 241, 0.3);
+    --header-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+    --card-bg: var(--glass-bg);
+    --card-border: var(--glass-border);
+    --card-shadow: var(--glass-shadow);
+
+    --table-bg: var(--surface-color);
+    --table-border: var(--border-color);
+    --table-header-bg: rgba(99, 102, 241, 0.1);
+    --table-row-hover: var(--surface-color-hover);
+
+    --input-bg: var(--surface-color);
+    --input-border: var(--border-color);
+    --input-focus: var(--accent-color);
+    --input-text: var(--font-color);
+
+    --button-primary: var(--accent-color);
+    --button-primary-hover: var(--accent-hover);
+    --button-secondary: var(--surface-color);
+    --button-secondary-hover: var(--surface-color-hover);
+    --button-danger: var(--danger-color);
+    --button-danger-hover: var(--danger-hover);
+    --button-success: var(--success-color);
+    --button-success-hover: var(--success-hover);
+    --button-warning: var(--warning-color);
+    --button-warning-hover: var(--warning-hover);
+}
+
+/* ===== RÉINITIALISATION ET BASE ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', 'Android Emoji', 'EmojiSymbols', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
+    color: var(--font-color);
+    margin: 0;
+    padding: 30px;
+    min-height: 100vh;
+    line-height: 1.6;
+    font-weight: 400;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== HEADER ===== */
+header {
+    background: var(--header-bg);
+    color: var(--font-color);
+    padding: 1.5rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: var(--header-shadow);
+    font-weight: 600;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    border: 1px solid var(--header-border);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-color), var(--success-color), var(--warning-color));
+}
+
+header div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header button {
+    background: none;
+    border: none;
+    color: var(--font-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+header button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
+}
+
+/* ===== EMOJIS EN COULEUR ET LISIBLES ===== */
+.emoji, h1 .emoji, h2 .emoji, .emoji-title {
+    font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', 'Android Emoji', 'EmojiSymbols', 'Inter', sans-serif !important;
+    font-size: 1.3em;
+    vertical-align: middle;
+    color: inherit;
+    filter: none;
+    margin: 0 0.15em;
+    line-height: 1;
+    letter-spacing: 0;
+}
+
+/* Ajoute un peu d'espace autour des emojis dans les titres */
+h1 .emoji, h2 .emoji, .emoji-title {
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+}
+
+/* ===== TITRE PRINCIPAL MODERNE ===== */
+h1, .main-title {
+    text-align: center;
+    font-size: 2.7rem;
+    margin: 30px 0;
+    color: var(--font-color);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    background: linear-gradient(135deg, var(--accent-color), var(--font-color), var(--text-muted));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 2px 8px rgba(99,102,241,0.10));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3em;
+}
+
+h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2em;
+}
+
+/* ===== DASHBOARD ===== */
+.dashboard {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 2rem;
+    align-items: start;
+    min-height: 60vh;
+}
+
+.stats-box {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.stats-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.stats-card {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--accent-color);
+    padding: 0.7rem 1.1rem;
+    border-radius: 10px;
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.stats-card .icon {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.stats-card span.value {
+    font-size: 1.3rem;
+    color: var(--font-color);
+    font-weight: 700;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.button-group a {
+    padding: 0.7rem 1.1rem;
+    background: var(--button-primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.button-group a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.button-group a:hover::before {
+    left: 100%;
+}
+
+.button-group a:hover {
+    background: var(--button-primary-hover);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+}
+
+.chart-container {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(10px);
+}
+
+.chart-container h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: var(--accent-color);
+    text-align: center;
+}
+
+canvas {
+    max-width: 100%;
+    border-radius: 12px;
+}
+
+/* ===== TABLEAUX ===== */
+table {
+    width: 100%;
+    background: var(--table-bg);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(10px);
+    margin: 2rem 0;
+}
+
+thead {
+    background: var(--table-header-bg);
+}
+
+th {
+    padding: 1.5rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--border-color);
+    font-size: 1.1rem;
+}
+
+td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--font-color);
+}
+
+tr:hover {
+    background: var(--table-row-hover);
+    transition: background 0.3s ease;
+}
+
+/* ===== FORMULAIRES ===== */
+form {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(10px);
+    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: var(--font-color);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select,
+textarea {
+    padding: 1rem;
+    background: var(--input-bg);
+    border: 2px solid var(--input-border);
+    border-radius: 12px;
+    color: var(--input-text);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--input-focus);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    transform: translateY(-2px);
+}
+
+input[type="submit"],
+button[type="submit"] {
+    padding: 1rem 2rem;
+    background: var(--button-primary);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+input[type="submit"]:hover,
+button[type="submit"]:hover {
+    background: var(--button-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+}
+
+/* ===== BADGES ET ÉTATS ===== */
+.admin-badge {
+    background: var(--accent-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-left: 0.5rem;
+}
+
+.type-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.type-createFile,
+.type-uploadFile {
+    background: var(--success-color);
+    color: white;
+}
+
+.type-deleteFile,
+.type-deleteFolder {
+    background: var(--danger-color);
+    color: white;
+}
+
+.type-createFolder {
+    background: var(--warning-color);
+    color: white;
+}
+
+.type-moveFile,
+.type-renameFile,
+.type-downloadFile {
+    background: var(--accent-color);
+    color: white;
+}
+
+/* ===== CONTENU TOGGLE ===== */
+.content-toggle {
+    color: var(--accent-color);
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.content-toggle:hover {
+    color: var(--accent-hover);
+}
+
+.content-box {
+    display: none;
+    background: var(--surface-color);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 0.5rem;
+    border: 1px solid var(--border-color);
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    white-space: pre-wrap;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+/* ===== RECHERCHE ===== */
+#search {
+    width: 100%;
+    max-width: 400px;
+    margin: 2rem auto;
+    display: block;
+    padding: 1rem 1.5rem;
+    background: var(--input-bg);
+    border: 2px solid var(--input-border);
+    border-radius: 12px;
+    color: var(--input-text);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+#search:focus {
+    outline: none;
+    border-color: var(--input-focus);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    transform: translateY(-2px);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    margin-top: 3rem;
+    text-align: center;
+    padding: 2rem;
+    background: var(--card-bg);
+    border-radius: 20px;
+    color: var(--font-color);
+    font-weight: 600;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(10px);
+}
+
+.logout {
+    color: var(--danger-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 600;
+}
+
+.logout:hover {
+    color: var(--danger-hover);
+}
+
+.credits2 {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.credits2:hover {
+    color: var(--font-color);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+    body {
+        padding: 20px;
+    }
+
+    .dashboard {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .stats-box,
+    .chart-container {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+
+    header div {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    th,
+    td {
+        padding: 0.75rem 0.5rem;
+    }
+
+    .stats-card {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.stats-box,
+.chart-container,
+table,
+form {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* ===== SCROLLBAR PERSONNALISÉE ===== */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--surface-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--border-light);
+}
+
+/* ===== FOCUS GLOBAL ===== */
+*:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* ===== TRANSITIONS GLOBALES ===== */
+* {
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+} 
