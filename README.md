@@ -49,7 +49,6 @@ Un thème élégant, moderne et 100% responsive pour SiCSy, avec design sombre, 
 
 ## 📸 Captures d'écran
 
-[img/edit-file.png](https://github.com/pandev22/SiCSy-DarkModern/blob/main/img/home.png?raw=true)
 https://github.com/pandev22/SiCSy-DarkModern/blob/main/img/home-do.png?raw=true
 https://github.com/pandev22/SiCSy-DarkModern/blob/main/img/file-new.png?raw=true
 https://github.com/pandev22/SiCSy-DarkModern/blob/main/img/edit-file.png?raw=true
