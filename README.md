@@ -37,7 +37,7 @@ Un thème élégant, moderne et 100% responsive pour SiCSy, avec design sombre, 
 - ✅ Responsive et tactile
 - ✅ Accessibilité optimisée
 
-## 🆕 Nouveautés 2024
+## 🆕 Nouveautés 2025
 
 - **Bouton d'agrandissement de l'éditeur**
 - **Notifications toast stylées**
